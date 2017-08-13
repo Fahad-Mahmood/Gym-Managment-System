@@ -1,0 +1,376 @@
+<?php  include 'database.php'; 
+
+//check if form is submitted
+if (isset($_POST['submit'])) {
+$customer= mysqli_real_escape_string($con,$_POST['name']);
+$program= mysqli_real_escape_string($con,$_POST['program']);
+$fees= mysqli_real_escape_string($con,$_POST['fees']);
+$manager= mysqli_real_escape_string($con,$_POST['manage']);
+$address= mysqli_real_escape_string($con,$_POST['address']);
+    $age= mysqli_real_escape_string($con,$_POST['age']);
+    $chest= mysqli_real_escape_string($con,$_POST['chest']);
+	$weight= mysqli_real_escape_string($con,$_POST['weight']);
+    $height= mysqli_real_escape_string($con,$_POST['height']);
+    $calves= mysqli_real_escape_string($con,$_POST['calves']);
+    $contact= mysqli_real_escape_string($con,$_POST['contact']);
+    $waist= mysqli_real_escape_string($con,$_POST['waist']);
+    
+    if (!isset($customer) || $customer == "" || !isset($fees) || $fees == "0"){
+	echo'bad';
+	
+	
+}
+
+else {
+	
+	$query1= "INSERT into customer_data(id_Manager,Customer_Name,Customer_Fees,Customer_Program,age,address,contact,chest,weight,height,calves,waist) values ('$manager','$customer','$fees','$program','$age','$address','$contact','$chest','$weight','$height','$calves','$waist') ";
+    if(!mysqli_query($con,$query1)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: customer.php " );
+			exit();
+			
+		}
+	
+    
+	
+} 
+}
+if (isset($_POST['submit1'])) {
+    
+    $cu_Delete = mysqli_real_escape_string($con,$_POST['cu-id']);
+
+	
+	$query2= "Delete from customer_data where id_Customer = $cu_Delete   ";
+    if(!mysqli_query($con,$query2)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: customer.php " );
+			exit();
+			
+		}
+	
+    
+    
+}
+if (isset($_POST['submit2'])) {
+    
+    $cu_search = mysqli_real_escape_string($con,$_POST['cu-id1']);
+   
+	$query_se = "SELECT * from customer_data where id_Customer = $cu_search   ";
+     $cu_searchrs = mysqli_query($con,$query_se) ;
+    
+        while($row=mysqli_fetch_assoc($cu_searchrs)){
+            
+			header("Location:customer.php"."?name=".urlencode($row['Customer_Name'])."&age=".urlencode($row['age'])."&address=".urlencode($row['address'])."&tel=".urlencode($row['contact'])."&height=".urlencode($row['height'])."&weight=".urlencode($row['weight'])."&chest=".urlencode($row['chest'])."&waist=".urlencode($row['waist'])."&calves=".urlencode($row['calves'])."&program=".urlencode($row['Customer_Program'])."&fees=".urlencode($row['Customer_Fees']));
+            
+        }
+    
+    
+	
+    
+    
+}
+if (isset($_POST['submit3'])) {
+$id= mysqli_real_escape_string($con,$_POST['id_cust']);
+$customer= mysqli_real_escape_string($con,$_POST['name']);
+$program= mysqli_real_escape_string($con,$_POST['program']);
+$fees= mysqli_real_escape_string($con,$_POST['fees']);
+$manager= mysqli_real_escape_string($con,$_POST['manage']);
+$address= mysqli_real_escape_string($con,$_POST['address']);
+    $age= mysqli_real_escape_string($con,$_POST['age']);
+    $chest= mysqli_real_escape_string($con,$_POST['chest']);
+	$weight= mysqli_real_escape_string($con,$_POST['weight']);
+    $height= mysqli_real_escape_string($con,$_POST['height']);
+    $calves= mysqli_real_escape_string($con,$_POST['calves']);
+    $contact= mysqli_real_escape_string($con,$_POST['contact']);
+    $waist= mysqli_real_escape_string($con,$_POST['waist']);
+    
+  
+
+
+	
+	$query1= "UPDATE customer_data SET Customer_Name=$customer,Customer_Fees=$fees,Customer_Program=$program,age=$age,address=$address,contact=$contact,chest=$chest,weight=$weight,height=$height,calves=$calves,waist=$waist) where id_Customer=$id";
+    if(!mysqli_query($con,$query1)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: customer.php " );
+			exit();
+			
+		}
+	
+    
+	
+
+}
+if (isset($_POST['submit4'])) {
+    
+$tid= mysqli_real_escape_string($con,$_POST['tr_id']);
+$cid= mysqli_real_escape_string($con,$_POST['ct_id']);
+$query = "INSERT INTO customer (id_Trainer,id_Customer) VALUES ('$tid','$cid')";
+     if(!mysqli_query($con,$query)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: customer.php " );
+			exit();
+			
+
+	
+    
+    
+}
+}
+if (isset($_POST['submit5'])) {
+$trainer= mysqli_real_escape_string($con,$_POST['name']);
+$speciality= mysqli_real_escape_string($con,$_POST['speciality']);
+$manager= mysqli_real_escape_string($con,$_POST['manage']);
+$address= mysqli_real_escape_string($con,$_POST['address']);
+    $age= mysqli_real_escape_string($con,$_POST['age']);
+    $date= mysqli_real_escape_string($con,$_POST['date']);
+	$points= mysqli_real_escape_string($con,$_POST['points']);
+    $contact= mysqli_real_escape_string($con,$_POST['contact']);
+
+    
+  
+
+
+	
+	$query1= "INSERT into trainer(id_Manager,Trainer_Name,Speciality,Points,age,address,contact,join_date) values ('$manager','$trainer','$speciality','$points','$age','$address','$contact','$date') ";
+    if(!mysqli_query($con,$query1)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: trainer.php " );
+			exit();
+			
+        }
+	
+    
+	
+}
+if (isset($_POST['submit6'])) {
+    
+    $cu_Delete = mysqli_real_escape_string($con,$_POST['cu-id']);
+
+	
+	$query2= "Delete from trainer where id_Trainer = $cu_Delete   ";
+    if(!mysqli_query($con,$query2)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: trainer.php " );
+			exit();
+			
+		}
+	
+    
+    
+}
+if (isset($_POST['submit7'])) {
+    
+    $tr_search = mysqli_real_escape_string($con,$_POST['cu-id1']);
+   
+	$query_se = "SELECT * from trainer where id_Trainer = $tr_search   ";
+     $tr_searchrs = mysqli_query($con,$query_se) ;
+    
+        while($row=mysqli_fetch_assoc($tr_searchrs)){
+            
+			header("Location:trainer.php"."?name=".urlencode($row['Trainer_Name'])."&age=".urlencode($row['age'])."&address=".urlencode($row['address'])."&tel=".urlencode($row['contact'])."&points=".urlencode($row['Points'])."&speciality=".urlencode($row['Speciality'])."&date=".urlencode($row['join_date']));
+            
+        }
+    
+    
+	
+    
+    
+}
+if (isset($_POST['submit8'])) {
+$id= mysqli_real_escape_string($con,$_POST['id_cust']);
+$trainer= mysqli_real_escape_string($con,$_POST['name']);
+$speciality= mysqli_real_escape_string($con,$_POST['speciality']);
+$manager= mysqli_real_escape_string($con,$_POST['manage']);
+$address= mysqli_real_escape_string($con,$_POST['address']);
+$age= mysqli_real_escape_string($con,$_POST['age']);
+$date= mysqli_real_escape_string($con,$_POST['date']);
+$points= mysqli_real_escape_string($con,$_POST['points']);
+$contact= mysqli_real_escape_string($con,$_POST['contact']);
+
+  
+
+
+	
+	$query1= "UPDATE trainer SET Trainer_Name=$trainer,Speciality=$speciality,id_Manager=$manager,age=$age,address=$address,contact=$contact,Points=$points,join_date=$date where id_Trainer = $id";
+    if(!mysqli_query($con,$query1)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: trainer.php " );
+			exit();
+			
+		}
+	
+    
+	
+
+}
+if (isset($_POST['submit9'])) {
+$type= mysqli_real_escape_string($con,$_POST['name']);
+$quantity= mysqli_real_escape_string($con,$_POST['quantity']);
+$manager= mysqli_real_escape_string($con,$_POST['manager']);
+	
+	$query1= "INSERT into equipment_manag(id_Manager,quantity,type) values ('$manager','$quantity','$type') ";
+    if(!mysqli_query($con,$query1)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: equipment.php " );
+			exit();
+			
+        }
+	
+    
+	
+}
+if (isset($_POST['submit10'])) {
+    
+    $cu_Delete = mysqli_real_escape_string($con,$_POST['cu-id']);
+
+	
+	$query2= "Delete from equipment_manag where id_equipment = $cu_Delete   ";
+    if(!mysqli_query($con,$query2)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: equipment.php " );
+			exit();
+			
+		}
+	
+    
+    
+}
+if (isset($_POST['submit11'])) {
+    
+    $eq_search = mysqli_real_escape_string($con,$_POST['cu-id1']);
+   
+	$query_se = "SELECT * from equipment_manag where id_equipment = $eq_search   ";
+     $eq_searchrs = mysqli_query($con,$query_se) ;
+    
+        while($row=mysqli_fetch_assoc($eq_searchrs)){
+            
+			header("Location:equipment.php"."?type=".urlencode($row['type'])."&quantity=".urlencode($row['quantity']));
+            
+        }
+    
+    
+	
+    
+    
+}
+if (isset($_POST['submit12'])) {
+$id= mysqli_real_escape_string($con,$_POST['id_cust']);
+$type= mysqli_real_escape_string($con,$_POST['name']);
+$quantity= mysqli_real_escape_string($con,$_POST['quantity']);
+
+  
+
+
+	
+	$query1= "UPDATE equipment_manag SET type=$type,quantity=$quantity where id_equipment = $id";
+    if(!mysqli_query($con,$query1)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: equipment.php " );
+			exit();
+			
+		}
+	
+    
+	
+
+}
+if (isset($_POST['submit13'])) {
+    
+$eid= mysqli_real_escape_string($con,$_POST['eq_id']);
+$tid= mysqli_real_escape_string($con,$_POST['tr_id']);
+$query = "INSERT INTO trainer (id_equipment) VALUES ('$eid') where id_Trainer = $tid";
+     if(!mysqli_query($con,$query)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: customer.php " );
+			exit();
+			
+
+	
+    
+    
+}
+}
+if (isset($_POST['submit14'])) {
+$yoga= mysqli_real_escape_string($con,$_POST['yoga']);
+$bath= mysqli_real_escape_string($con,$_POST['bath']);
+$idtrain= mysqli_real_escape_string($con,$_POST['idtr']);
+$time= mysqli_real_escape_string($con,$_POST['time']);
+	$query1= "INSERT into gym_service(Yogateaching,SteamBath,id_trainer,service_timing) values ('$yoga','$bath','$idtrain','$time') ";
+    if(!mysqli_query($con,$query1)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: services.php " );
+			exit();
+			
+        }
+	
+    
+	
+}
+if (isset($_POST['submit15'])) {
+$cid= mysqli_real_escape_string($con,$_POST['id']);
+$fee= mysqli_real_escape_string($con,$_POST['fee']);
+$pd= mysqli_real_escape_string($con,$_POST['pd']);
+$date= mysqli_real_escape_string($con,$_POST['date']);
+	$query1= "INSERT into customer_fees(id_Customer,Fees,Previous_Due,Due_Date) values ('$cid','$fee','$pd','$date') ";
+    if(!mysqli_query($con,$query1)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: customer.php " );
+			exit();
+			
+        }
+	
+    
+	
+}
+//validate input
+
+
+
+if (!isset($customer) || $customer == "" || !isset($fees) || $fees == "0"){
+	echo'bad';
+	
+	
+}
+
+else {
+	
+	$query1= "INSERT into customer_data(id_Manager,Customer_Name,Customer_Fees,Customer_Program,age,address,contact,chest,weight,height,calves,waist) values ('$manager','$customer','$fees','$program','$age','$address','$contact','$chest','$weight','$height','$calves','$waist') ";
+    if(!mysqli_query($con,$query1)) {
+		die('Error:' .mysqli_error($con));
+		}
+		else {
+			header("Location: customer.php " );
+			exit();
+			
+		}
+	
+	
+	}
+
+

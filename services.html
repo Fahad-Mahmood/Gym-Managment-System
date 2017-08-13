@@ -1,0 +1,192 @@
+<?php include 'database.php'; ?>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">  
+         <link rel="stylesheet" type="text/css" href="vendors/css/nomralise.css">
+         <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
+         <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+         <title>Gym Equipments</title>
+         <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,300italic' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+<body>
+    
+     <header>
+         <div class="row">
+             <a href="index.html"><img src="css/img/gym1.png" alt="Omnifood logo" class="logo"></a>
+         <ul class="main-nav">
+             <li><a href="customer.html"> Customers </a>  </li>
+               <li><a href="trainer.html"> Trainers </a>  </li>
+               <li><a href="equipment.html"> Equipments </a>  </li>
+             <li><a href="services.html"> services </a>  </li>
+                </ul>
+            </div>
+         <div class="hero-text-box">
+      <h1>Welcome to Gym Managment System</h1>
+        <div class="contain">
+          <a class="btn btn-full js--scroll-to-plan" href="#">Manage Easily</a>   
+           <a class="btn btn-ghost js--scroll-to-start" href="#">Train with Style</a>   
+        </div>
+     </div>
+             </header>
+   
+    <section class="form bord">
+   <div class="row">
+                  <h2>Services Records</h2>
+        <p class="long-copy">Welcome to the Services section of Gym Management System. Manage gym services through the form below.
+            </p>
+              </div>
+              <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+                    <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Yoga Teaching</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="text" name="yoga" id="name" placeholder="Type of Yoga" required>
+                        </div>
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">SteamBath</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="text" name="bath" id="bath" placeholder="Steam Bath Type" required>
+                        </div>   
+                      </div>
+                      <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Timings</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="time" name="time" id="time" placeholder="Service Timing" required>
+                        </div>   
+                      </div>
+                         <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Trainer ID</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="idtr" id="idtr" placeholder="0" required>
+                        </div>
+                      </div>  
+                       <div class="row from">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit14" value="Send it!">
+                         </div>
+                        </div>
+                  </form>
+             </div>
+        </section>
+    <section class="bord">
+   <div class="row">
+        <h2>Records Deletion</h2>
+        <p class="long-copy">Delete the record of Equipments through the from below. Enter the id of the equipment to delete the record.
+            </p>
+        </div>
+        <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+            
+                <div class="row form">
+                        <div>
+                          <input type="number" name="cu-id" id="cu-id" placeholder="0" required>
+                        </div>
+                      </div>
+                        <div class="row form">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit10" value="Send it!">
+                         </div>
+                        </div>
+                </form>
+              </div>
+    </section>
+    
+     <section class="form bord">
+   <div class="row">
+                  <h2>Modify Services</h2>
+        <p class="long-copy">Modify and update the record of your services by inserting their unique services id in the form below.
+            </p>
+              </div>
+              <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+                   <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">ID Equipment</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="id_cust" id="id_cust" placeholder="Equipment ID" required>
+                        </div>
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Equipment Type</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="text" name="name" id="name" placeholder="Name of Equipment" required>
+                        </div>
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Quantity</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="quantity" id="quantity" placeholder="Quantity" required>
+                        </div>   
+                      </div>
+                     
+                      <div class="row">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit12" value="Send it!">
+                         </div>
+                        </div>
+                      
+                  </form>
+             </div>
+        </section>
+      
+<footer>
+          <div class="row">
+             <div class="col span-1-of-2">
+               <ul class="footer-nav">
+                   <li> <a href="#">About us</a></li>
+                   <li> <a href="#">Blog</a></li>
+                   <li> <a href="#">Press</a></li>
+                   <li> <a href="#">IOS App</a></li>
+                   <li> <a href="#">Android App</a></li>
+                 </ul>
+              </div>
+                 <div class="col span-1-of-2">
+                   <ul class="social-links">
+                       <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                       <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                       <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                       <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                     </ul>    
+              </div>
+            </div>
+            <div class="row">
+            <p> Copyright &copy; 2017 Gym Managment System. All rights reserved.  </p>
+            </div>
+        </footer>
+    </body>    
+
+</html>

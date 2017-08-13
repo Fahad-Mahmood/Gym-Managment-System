@@ -1,0 +1,355 @@
+<?php include 'database.php'; ?>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">  
+         <link rel="stylesheet" type="text/css" href="vendors/css/nomralise.css">
+         <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
+         <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+         <title>Gym Managment</title>
+         <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,300italic' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+<body>
+    
+     <header>
+         <div class="row">
+             <a href="index.html"><img src="css/img/gym1.png" alt="Omnifood logo" class="logo"></a>
+         <ul class="main-nav">
+             <li><a href="customer.html"> Customers </a>  </li>
+               <li><a href="trainer.html"> Trainers </a>  </li>
+               <li><a href="equipment.html"> Equipments </a>  </li>
+             <li><a href="services.html"> services </a>  </li>
+                </ul>
+            </div>
+         <div class="hero-text-box">
+      <h1>Welcome to Gym Managment System</h1>
+        <div class="contain">
+          <a class="btn btn-full js--scroll-to-plan" href="#">Manage Easily</a>   
+           <a class="btn btn-ghost js--scroll-to-start" href="#">Train with Style</a>   
+        </div>
+     </div>
+             </header>
+    <section class="bord">
+   <div class="row">
+        <h2>Search Trainer</h2>
+        <p class="long-copy">Find the record of trainer in your gym by placing the id of the trainer in the form below.
+            </p>
+        </div>
+          <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+            
+                <div class="row form">
+                        <div>
+                          <input type="number" name="cu-id1" id="cu-id1" placeholder="0" required>
+                        </div>
+                      </div>
+                        <div class="row form">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit7" value="Send it!">
+                         </div>
+                      </div>
+                      </form>
+                      </div>
+              <div class="row">
+                    <?php if (isset($_GET['name']))  :?>
+               
+              <div class="col span-1-of-7" >
+                    <p> Trainer Name</p>
+                        </div>
+                      <div class="col span-1-of-7" >
+                    <p> Age</p>
+                        </div>
+                    <div class="col span-1-of-7" >
+                    <p> Address</p>
+                        </div>
+                    <div class="col span-1-of-7" >
+                    <p> Telephone</p>
+                        </div>
+                    <div class="col span-1-of-7" >
+                    <p> Points</p>
+                        </div>
+                    <div class="col span-1-of-7" >
+                    <p> Speciality</p>
+                        </div>
+                    <div class="col span-1-of-7" >
+                    <p>Joining Date </p>
+                        </div>
+              <?php endif ; ?>
+        </div>
+                  <div class="row">
+                  <?php if (isset($_GET['name'])) :?>
+                  <div class="col span-1-of-7">
+                      <p> <?php echo $_GET['name']  ?></p>
+                          </div>
+                      <div class="col span-1-of-7">
+                      <p> <?php echo $_GET['age']  ?></p>
+                          </div>
+                      <div class="col span-1-of-7">
+                      <p> <?php echo $_GET['address']  ?></p>
+                          </div>
+                      <div class="col span-1-of-7">
+                      <p> <?php echo $_GET['tel']  ?></p>
+                          </div>
+                      <div class="col span-1-of-7">
+                      <p> <?php echo $_GET['points']  ?></p>
+                          </div>
+                      <div class="col span-1-of-7">
+                      <p> <?php echo $_GET['speciality']  ?></p>
+                          </div>
+                      <div class="col span-1-of-7">
+                      <p> <?php echo $_GET['date']  ?></p>
+                          </div>
+                  <?php endif ;?>
+                  
+                  </div>      
+       
+    </section>
+   
+    <section class="form bord">
+   <div class="row">
+                  <h2>Trainer Records</h2>
+        <p class="long-copy">Welcome to the Customer's section of Gym Management System. Manage the records of customers through the form below.
+            </p>
+              </div>
+              <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+                    <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="text" name="name" id="name" placeholder="Trainer name" required>
+                        </div>
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Age</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="age" id="age" placeholder="Trainer Age" required>
+                        </div>   
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Address</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                         <textarea name="address" placeholder="Trainer Address"></textarea>
+                        </div>
+                      </div>
+                         <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Telephone</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="tel" name="contact" id="contact" placeholder=" Contact Number" required>
+                        </div>
+                      </div>  
+                    <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Points</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="points" id="points" placeholder="Points of Trainer" required>
+                        </div>
+                      </div> 
+                        <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Speciality</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="text" name="speciality" id="speciality" placeholder="Speciality of Trainer" required>
+                        </div>
+                      </div>  
+                        <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Joining Date</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="date" name="date" id="date" placeholder="" required>
+                        </div>
+                      </div>      
+                        
+                     
+                      <div class="row form">
+                       <div class="col span-1-of-3">
+                         <label for="name">Manager ID</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="manage" id="manage" placeholder="0" required>
+                        </div>
+                      </div>
+                      <div class="row from">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit5" value="Send it!">
+                         </div>
+                        </div>
+                      
+                  </form>
+             </div>
+        </section>
+    <section class="bord">
+   <div class="row">
+        <h2>Records Deletion</h2>
+        <p class="long-copy">Delete the record of Trainers through the from below. Enter the id of the trainer to delete the record.
+            </p>
+        </div>
+        <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+            
+                <div class="row form">
+                        <div>
+                          <input type="number" name="cu-id" id="cu-id" placeholder="0" required>
+                        </div>
+                      </div>
+                        <div class="row form">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit6" value="Send it!">
+                         </div>
+                        </div>
+                </form>
+              </div>
+    </section>
+    
+     <section class ="form bord">
+   <div class="row">
+                  <h2>Modify Records</h2>
+        <p class="long-copy">Modify and update the record of your trainers by inserting their unique customer id in the form below.
+            </p>
+              </div>
+              <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+                   <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">ID Trainer</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="id_cust" id="id_cust" placeholder="Trainer ID" required>
+                        </div>
+                      </div>
+                      <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="text" name="name" id="name" placeholder="Trainer name" required>
+                        </div>
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Age</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="age" id="age" placeholder="Trainer Age" required>
+                        </div>   
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Address</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                         <textarea name="address" placeholder="Trainer Address"></textarea>
+                        </div>
+                      </div>
+                         <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Telephone</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="tel" name="contact" id="contact" placeholder=" Contact Number" required>
+                        </div>
+                      </div>  
+                    <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Points</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="points" id="points" placeholder="Points of Trainer" required>
+                        </div>
+                      </div> 
+                        <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Speciality</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="text" name="speciality" id="speciality" placeholder="Speciality of Trainer" required>
+                        </div>
+                      </div>  
+                        <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Joining Date</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="date" name="date" id="date" placeholder="" required>
+                        </div>
+                      </div>      
+                        
+                     
+                      <div class="row form">
+                       <div class="col span-1-of-3">
+                         <label for="name">Manager ID</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="manage" id="manage" placeholder="0" required>
+                        </div>
+                      </div>
+                     
+                      <div class="row">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit8" value="Send it!">
+                         </div>
+                        </div>
+                      
+                  </form>
+             </div>
+        </section>
+    
+<footer>
+          <div class="row">
+             <div class="col span-1-of-2">
+               <ul class="footer-nav">
+                   <li> <a href="#">About us</a></li>
+                   <li> <a href="#">Blog</a></li>
+                   <li> <a href="#">Press</a></li>
+                   <li> <a href="#">IOS App</a></li>
+                   <li> <a href="#">Android App</a></li>
+                 </ul>
+              </div>
+                 <div class="col span-1-of-2">
+                   <ul class="social-links">
+                       <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                       <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                       <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                       <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                     </ul>    
+              </div>
+            </div>
+            <div class="row">
+            <p> Copyright &copy; 2015 Gym Managment System. All rights reserved.  </p>
+            </div>
+        </footer>
+    </body>    
+
+</html>

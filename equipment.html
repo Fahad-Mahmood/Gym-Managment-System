@@ -1,0 +1,261 @@
+<?php include 'database.php'; ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">  
+         <link rel="stylesheet" type="text/css" href="vendors/css/nomralise.css">
+         <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
+         <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+         <title>Gym Equipments</title>
+         <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,300italic' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+<body>
+    
+     <header>
+         <div class="row">
+             <a href="index.html"><img src="css/img/gym1.png" alt="Omnifood logo" class="logo"></a>
+         <ul class="main-nav">
+             <li><a href="customer.html"> Customers </a>  </li>
+               <li><a href="trainer.html"> Trainers </a>  </li>
+               <li><a href="equipment.html"> Equipments </a>  </li>
+             <li><a href="services.html"> services </a>  </li>
+                </ul>
+            </div>
+         <div class="hero-text-box">
+      <h1>Welcome to Gym Managment System</h1>
+        <div class="contain">
+          <a class="btn btn-full js--scroll-to-plan" href="#">Manage Easily</a>   
+           <a class="btn btn-ghost js--scroll-to-start" href="#">Train with Style</a>   
+        </div>
+     </div>
+             </header>
+    <section class="bord">
+   <div class="row">
+        <h2>Search Equipments</h2>
+        <p class="long-copy">Find the record of equipments in your gym by placing the id of the trainer in the form below.
+            </p>
+        </div>
+          <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+            
+                <div class="row form">
+                        <div>
+                          <input type="number" name="cu-id1" id="cu-id1" placeholder="0" required>
+                        </div>
+                      </div>
+                        <div class="row form">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit11" value="Send it!">
+                         </div>
+                      </div>
+                      </form>
+                      </div>
+              <div class="row">
+                    <?php if (isset($_GET['type']))  :?>
+               
+              <div class="col span-1-of-2" >
+                    <p> Type</p>
+                        </div>
+                      <div class="col span-1-of-2" >
+                    <p> Quantity</p>
+                        </div>
+              <?php endif ; ?>
+        </div>
+                  <div class="row">
+                  <?php if (isset($_GET['type'])) :?>
+                  <div class="col span-1-of-2">
+                      <p> <?php echo $_GET['type']  ?></p>
+                          </div>
+                      <div class="col span-1-of-2">
+                      <p> <?php echo $_GET['quantity']  ?></p>
+                          </div>
+                  <?php endif ;?>
+                  
+                  </div>      
+       
+    </section>
+    <section class="form bord">
+   <div class="row">
+                  <h2>Equipment Records</h2>
+        <p class="long-copy">Welcome to the Equipment's section of Gym Management System. Manage the records of equipments through the form below.
+            </p>
+              </div>
+              <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+                    <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Equipment Type</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="text" name="name" id="name" placeholder="Name of Equipment" required>
+                        </div>
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Quantity</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="quantity" id="quantity" placeholder="Quantity" required>
+                        </div>   
+                      </div>
+                         <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Manager ID</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="manager" id="manager" placeholder="0" required>
+                        </div>
+                      </div>   
+                      <div class="row from">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit9" value="Send it!">
+                         </div>
+                        </div>
+                      
+                  </form>
+             </div>
+        </section>
+    <section>
+   <div class="row">
+        <h2>Records Deletion</h2>
+        <p class="long-copy">Delete the record of Equipments through the from below. Enter the id of the equipment to delete the record.
+            </p>
+        </div>
+        <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+            
+                <div class="row form">
+                        <div>
+                          <input type="number" name="cu-id" id="cu-id" placeholder="0" required>
+                        </div>
+                      </div>
+                        <div class="row form">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit10" value="Send it!">
+                         </div>
+                        </div>
+                </form>
+              </div>
+    </section>
+   
+     <section class="form bord">
+   <div class="row">
+                  <h2>Modify Records</h2>
+        <p class="long-copy">Modify and update the record of your equipments by inserting their unique equipment id in the form below.
+            </p>
+              </div>
+              <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+                   <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">ID Equipment</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="id_cust" id="id_cust" placeholder="Equipment ID" required>
+                        </div>
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Equipment Type</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="text" name="name" id="name" placeholder="Name of Equipment" required>
+                        </div>
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Quantity</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="quantity" id="quantity" placeholder="Quantity" required>
+                        </div>   
+                      </div>
+                     
+                      <div class="row">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit12" value="Send it!">
+                         </div>
+                        </div>
+                      
+                  </form>
+             </div>
+        </section>
+      <section class="form bord">
+   <div class="row">
+                  <h2>Assign Equipments to Trainers</h2>
+        <p class="long-copy">Manage and assign equipments to trainers through the form below. Insert the ID of equipment for trainser so equipments can be assigned to the trainer.
+            </p>
+              </div>
+              <div class="row">
+                  <form method="post" action="process.php" class="contact-form">
+                    <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="">Equipment ID</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="eq_id" id="eq_id" placeholder="ID of Equipment" required>
+                        </div>
+                      </div>
+                       <div class="row">
+                       <div class="col span-1-of-3">
+                         <label for="name">Trainer ID</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                          <input type="number" name="tr_id" id="tr_id" placeholder="ID of Trainer" required>
+                        </div>   
+                      </div>
+                       <div class="row from">
+                           <div class="col span-1-of-3">
+                             <label>&nbsp;</label>
+                             </div>
+                           <div class="col span-2-of-3">
+                              <input type="submit" name="submit13" value="Send it!">
+                         </div>
+                        </div>
+                      
+                  </form>
+             </div>
+        </section>
+    
+<footer>
+          <div class="row">
+             <div class="col span-1-of-2">
+               <ul class="footer-nav">
+                   <li> <a href="#">About us</a></li>
+                   <li> <a href="#">Blog</a></li>
+                   <li> <a href="#">Press</a></li>
+                   <li> <a href="#">IOS App</a></li>
+                   <li> <a href="#">Android App</a></li>
+                 </ul>
+              </div>
+                 <div class="col span-1-of-2">
+                   <ul class="social-links">
+                       <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                       <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                       <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                       <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                     </ul>    
+              </div>
+            </div>
+            <div class="row">
+            <p> Copyright &copy; 2017 Gym Managment System. All rights reserved.  </p>
+            </div>
+        </footer>
+    </body>    
+
+</html>

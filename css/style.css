@@ -1,0 +1,344 @@
+/*------------------------------*/
+/*BASIC SETUP*/
+/*------------------------------*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color:#555555;
+    font-family:'Lato','Josefin Slab','Arial', serif;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+/*------------------------------*/
+/*REUSABLE COMPONENTS*/
+/*------------------------------*/
+
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto 0 auto;
+}
+section{
+    padding: 80px 0;
+    
+}
+.box{
+    padding: 1%;
+}
+
+h1 {
+     
+   margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size:280%; 
+    word-spacing: 4px;
+    letter-spacing: 1px;  
+    text-transform: uppercase;
+    
+}
+.heading {
+    font-size: 100%;
+    text-align: center;
+    color: azure;
+    margin-top: 100px;
+    padding: 10px 10px;
+    display: block;
+    border: 2px solid #005c97;
+    width: 20%;
+    background-color: #005c97;
+    float: left;
+    margin-right: 5px;
+}a
+.contain {
+    margin-left: 35%;
+}
+h2 {
+    font-family: 'Lato', sans-serif;;
+    font-size: 200%;
+    color: #555555;
+    text-align: center;
+    margin: 40px auto;
+    text-transform: uppercase;
+}
+h2:after{
+    display: block;
+    height: 4px;
+    background-color:rgba(136, 217, 217, 0.41);;
+    content: ""; 
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+/*------------------------------*/
+/*HEADER*/
+/*------------------------------*/
+header {
+    background-image:linear-gradient(rgba(85, 85, 85, 0.79),rgba(85, 85, 85, 0.61)),url(img/ss.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+.logo{
+    height: 80px;
+    width: auto;
+    float: left;
+    margin-top: 30px;
+    margin-left: -20px;
+    
+}
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 30%;
+    left: 5%;
+}
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+.main-nav li{
+    display: inline-block;
+    margin-left: 40px;
+}
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+.main-nav li a:hover,
+.main-nav li a:active{ 
+border-bottom: 3px solid  #005c97;
+}
+.contain {
+    margin-top: 10%;
+}
+/*------------BUTTONS----------------*/
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none; 
+    border-radius: 200px;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color:#363795;
+    border: 1px solid #363795;
+    color: #fff;
+    margin-right: 15px;
+}
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #363795;
+    color:#005c97;
+}
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color:#005c97;
+}
+.btn-full:hover,
+.btn-full:active { 
+    border: 1px solid #005c97;
+}
+.btn-ghost:hover,
+.btn-ghost:active{
+    border: 1px solid #005c97;
+    color: #fff;
+}
+.top {
+    
+    display: inline-block;
+    width: 100%;
+
+}
+.t1 {
+    margin-left: 25%;
+    margin-right: 25%;
+    border: 3px solid #555;
+}
+.t2{
+    border: 3px solid #555;
+    margin: auto 5px;
+}
+.t3{
+    border: 3px solid #555;
+    margin: auto 10%;
+}
+li {
+    
+list-style: none;
+    
+}
+.box {
+    display: inline-block;
+    padding-right: 22%;
+    border-right: 3px solid #555;
+
+}
+.boxa{
+    display: inline-block;
+    padding-right: 10%;
+    border-right: 3px solid #555;
+}
+.box1 {
+    display: inline-block;
+    padding-left: 10%;
+}
+.box2{
+    padding-left: 4%;
+    display: inline-block;
+}
+.table11{
+    padding-left: 25px;
+    
+}
+.table1a{
+    padding-left: 30px;
+}
+.table1b{
+    padding-left: 20px;
+}
+.table2 {
+padding-left: 50px;
+}
+.tablea{
+    padding-left: 52px;
+}
+.bord{
+    border-bottom: 3px solid #555;
+}
+/*------------------------------*/
+/*PARAGRAPH*/
+/*------------------------------*/ 
+.long-copy{
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 10%;
+    
+}
+/*------------------------------*/
+/*FORM*/
+/*------------------------------*/ 
+.contact-form{
+    width: 60%;
+    margin: 0 auto;
+}
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=date],
+select,
+textarea{
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+textarea{
+    height: 100px;
+}
+
+*:focus {outline: none}
+/*------------------------------*/
+/*STATISTICS/
+/*------------------------------*/ 
+.trainer {
+    margin-bottom: 3px;
+}
+/*------------------------------*/
+/*FOOTER/
+/*------------------------------*/ 
+
+footer{
+    background-color: #333;
+    padding: 40px;
+    padding-bottom: 10px;
+}
+.footer-nav{
+    list-style: none;
+    float: left;
+}
+.social-links{
+    list-style: none;
+    float: right;
+}
+.footer-nav li,
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+    
+}
+.footer-nav li:last-child,
+.social-links li:last-child {
+    margin-right: 0; 
+}
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+    border: none;
+    color:#888;
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #ddd;
+}
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%;
+}
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus
+.ion-social-instagram {
+    -webkit-transform: color 0.2s;
+    transform: color 0.2s;
+}
+.ion-social-facebook:hover{
+    color:#3b5998;
+}
+.ion-social-twitter:hover{
+    color: #00aced;
+}
+.ion-social-googleplus:hover{
+    color: #db4b39;
+}
+.ion-social-instagram:hover{
+    color: #517fa4;
+}
+footer p {
+    color: #888;
+    text-align: center;
+    font-size: 90%;
+    margin-top: 30px;
+}
+.last {
+    margin-bottom: 10px;
+}
